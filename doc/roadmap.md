@@ -1,7 +1,7 @@
 # Roadmap (todo)
 
 - create microservices
-    - one of them is core business logic (use hexagonal/onion/ddd architecture)
+    - core business logic (use hexagonal/onion/ddd architecture)
     - todo: choose and wrap auth server 
         - https://github.com/oauthjs/node-oauth2-server
         - https://github.com/panva/node-oidc-provider (from my old project)
@@ -16,3 +16,4 @@
 - configure lerna
 - configure workspaces
 - overthink old spotworld app, create big feature stack, prioritize them (business profit, personal grow ...)
+- k8
