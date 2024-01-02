@@ -92,6 +92,9 @@ importers:
       '@nestjs/platform-express':
         specifier: ^10.0.0
         version: 10.3.0(@nestjs/common@10.3.0)(@nestjs/core@10.3.0)
+      '@sptw/common-tools':
+        specifier: workspace:^
+        version: link:../../libs/common-tools
       reflect-metadata:
         specifier: ^0.1.13
         version: 0.1.14
@@ -117,7 +120,11 @@ importers:
         specifier: ^7.8.1
         version: 7.8.1
 
-  libs/common-tools: {}
+  libs/common-tools:
+    dependencies:
+      '@nestjs/common':
+        specifier: ^10.0.0
+        version: 10.3.0(reflect-metadata@0.1.14)(rxjs@7.8.1)
 
 packages:
 

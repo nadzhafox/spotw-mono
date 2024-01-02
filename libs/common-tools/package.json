@@ -2,12 +2,15 @@
   "name": "@sptw/common-tools",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "swc src -d dist"
+    "build": "tsc --build"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "@nestjs/common": "^10.0.0"
+  }
 }
