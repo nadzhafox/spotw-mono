@@ -6,6 +6,7 @@
   "private": true,
   "scripts": {
     "start": "node -r ts-node/register ./src/main",
+    "start:dev": "nodemon --config ../../dev/nodemon.json",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {

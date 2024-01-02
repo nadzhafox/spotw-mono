@@ -1,0 +1,11 @@
+{
+  "exec": "node -r ts-node/register ./src/main.ts",
+  "ext": "ts,js,json,graphql",
+  "ignore": ["*.test.ts"],
+  "verbose": true,
+  "watch": [ "src", "node_modules/@sptw" ],
+  "ignoreRoot": [
+    "**/node_modules/!(@sptw)/**",
+    "**/node_modules/@sptw/*/!(dist)/**"
+  ]
+}

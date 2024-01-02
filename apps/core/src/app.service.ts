@@ -9,7 +9,7 @@ export class AppService {
   }
 
   getHello(): string {
-    console.log('log core app hello')
+    console.log('log core app hello!')
     return this.commonToolsService.returnHelloString();
     // return 'Hello core app!';
   }
