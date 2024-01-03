@@ -4,3 +4,4 @@
 - highload testing (1 app with hard math function and test horizontal scaling, mb use other lng variant rust or go for improvment)
 - https://swc.rs/ for node, jest improvment
 - fastify over nestjs
+- auth app
