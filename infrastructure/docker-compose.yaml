@@ -1,0 +1,87 @@
+# todo name of all services
+# todo hide secrets https://docs.docker.com/compose/use-secrets/
+name: spotw
+services:
+  postgres: 
+    image: postgis/postgis
+    environment:
+      - POSTGRES_DB=spotw
+      - POSTGRES_USER=spotw-user
+      - POSTGRES_PASSWORD=spotw-password
+    ports: 
+      - 5432:5432
+    volumes: 
+      - ./volumes/postgres:/var/lib/postgresql/data
+
+  redis:
+    image: redis:latest
+    ports:
+      - 6379:6379
+    volumes:
+      - ./volumes/redis/redis.conf:/usr/local/etc/redis/redis.conf
+      - ./volumes/redis/data:/data
+    environment:
+      - REDIS_USER=spotw
+      - REDIS_PASSWORD=spotw-password
+      - REDIS_PORT=6379
+      - REDIS_DATABASES=16
+    command: 
+      redis-server /usr/local/etc/redis/redis.conf
+      
+      
+# todo elk stack https://github.com/docker/awesome-compose/blob/master/elasticsearch-logstash-kibana/README.md
+  # elasticsearch:
+  #   image: elasticsearch:7.16.1
+  #   container_name: es
+  #   environment:
+  #     discovery.type: single-node
+  #     ES_JAVA_OPTS: "-Xms512m -Xmx512m"
+  #   ports:
+  #     - "9200:9200"
+  #     - "9300:9300"
+  #   healthcheck:
+  #     test: ["CMD-SHELL", "curl --silent --fail localhost:9200/_cluster/health || exit 1"]
+  #     interval: 10s
+  #     timeout: 10s
+  #     retries: 3
+  #   networks:
+  #     - elastic
+
+  # logstash:
+  #   image: logstash:7.16.1
+  #   container_name: log
+  #   environment:
+  #     discovery.seed_hosts: logstash
+  #     LS_JAVA_OPTS: "-Xms512m -Xmx512m"
+  #   volumes:
+  #     - ./logstash/pipeline/logstash-nginx.config:/usr/share/logstash/pipeline/logstash-nginx.config
+  #     - ./logstash/nginx.log:/home/nginx.log
+  #   ports:
+  #     - "5000:5000/tcp"
+  #     - "5000:5000/udp"
+  #     - "5044:5044"
+  #     - "9600:9600"
+  #   depends_on:
+  #     - elasticsearch
+  #   networks:
+  #     - elastic
+  #   command: logstash -f /usr/share/logstash/pipeline/logstash-nginx.config
+
+  # kibana:
+  #   image: kibana:7.16.1
+  #   container_name: kib
+  #   ports:
+  #     - "5601:5601"
+  #   depends_on:
+  #     - elasticsearch
+  #   networks:
+  #     - elastic
+
+# networks:
+#   elastic:
+#     driver: bridge
+
+# volumes:
+#   spotw-data:
+#     driver: local
+

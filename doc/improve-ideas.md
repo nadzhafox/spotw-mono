@@ -5,3 +5,4 @@
 - https://swc.rs/ for node, jest improvment
 - fastify over nestjs
 - auth app
+- prometheus + grafana to monitor services

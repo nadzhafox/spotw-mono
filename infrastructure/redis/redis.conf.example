@@ -1,0 +1,2 @@
+# user to read config keys
+user config on >config-password ~* -@all +@read
