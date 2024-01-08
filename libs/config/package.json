@@ -1,5 +1,5 @@
 {
-  "name": "@sptw/common-tools",
+  "name": "@sptw/config",
   "version": "1.0.0",
   "description": "",
   "main": "dist/index.js",
@@ -11,6 +11,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@nestjs/common": "^10.0.0"
+    "@nestjs/common": "^10.0.0",
+    "redis": "^4.6.12"
   }
 }

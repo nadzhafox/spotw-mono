@@ -14,4 +14,4 @@
 - create lib for base configuration and wrapping all apps (logs, config, ...)
 - create lib authz dependance free (ddd style), todo (mb for checking rights on both sides back and front?)
 - overthink old spotworld app, create big feature stack, prioritize them (business profit, personal grow ...)
-- k8
+- learn k8 

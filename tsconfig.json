@@ -18,11 +18,17 @@
     "forceConsistentCasingInFileNames": false,
     "noFallthroughCasesInSwitch": false,
     "paths": {
-      "@sptw/common-tools": [
-        "libs/common-tools/src"
+      "@sptw/config": [
+        "libs/config/src"
       ],
-      "@sptw/common-tools/*": [
-        "libs/common-tools/src/*"
+      "@sptw/config/*": [
+        "libs/config/src/*"
+      ],
+      "@sptw/chassis": [
+        "libs/chassis/src"
+      ],
+      "@sptw/chassis/*": [
+        "libs/chassis/src/*"
       ]
     }
   },

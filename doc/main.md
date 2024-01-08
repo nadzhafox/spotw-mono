@@ -6,3 +6,5 @@ Shorthand dev name <em>sptw</em>
 - [[vscode-extensions]]
 
 
+## Requirements
+node 20.10.0

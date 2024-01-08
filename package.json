@@ -66,13 +66,8 @@
     "coverageDirectory": "./coverage",
     "testEnvironment": "node",
     "roots": [
-      "<rootDir>/app/",
-      "<rootDir>/lib/",
       "<rootDir>/libs/",
       "<rootDir>/apps/"
-    ],
-    "moduleNameMapper": {
-      "^@sptw/common-tools(|/.*)$": "<rootDir>/libs/common-tools/src/$1"
-    }
+    ]
   }
 }

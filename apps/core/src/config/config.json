@@ -1,0 +1,16 @@
+{ 
+    "postrgres":{
+        "user":"spotw",
+        "port":5432,
+        "database":"spotw",
+        "password":"spotw-password",
+        "host":"127.0.0.1"
+    },
+    "redis":{
+        "user":"spotw",
+        "port":5432,
+        "database":"spotw",
+        "password":"spotw-password",
+        "host":"127.0.0.1"
+    }
+}

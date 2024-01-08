@@ -1,16 +1,19 @@
 import { Injectable } from '@nestjs/common';
-import { CommonToolsService } from '@sptw/common-tools';
 
 @Injectable()
 export class AppService {
 
-  constructor(private commonToolsService: CommonToolsService) {
 
+  getHello(): void {
+    console.log('log core app hello!')
+    // return 'Hello core app!';
   }
 
-  getHello(): string {
-    console.log('log core app hello!')
-    return this.commonToolsService.returnHelloString();
-    // return 'Hello core app!';
+  getEvent() {
+    // SELECT ST_AsGeoJSON(ST_GeomFromGML('<gml:Point><gml:coordinates>1,1</gml:coordinates></gml:Point>'));
+  }
+
+  createEvent() {
+    // ST_AsGeoJSON
   }
 }
