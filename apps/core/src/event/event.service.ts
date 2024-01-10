@@ -3,10 +3,6 @@ import { CreateEventDto } from './dto/create-event.dto';
 import { UpdateEventDto } from './dto/update-event.dto';
 import { ConfigService } from '@sptw/config';
 
-const coreOptions = {
-  "": ''
-};
-
 @Injectable()
 export class EventService {
   constructor(private configService: ConfigService) {

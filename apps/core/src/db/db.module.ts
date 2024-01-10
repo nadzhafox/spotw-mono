@@ -4,6 +4,6 @@ import { PostgresConnectionProvider } from './postgres-connection.provider';
 
 @Module({
   providers: [DbService, PostgresConnectionProvider],
-  exports: [DbService]
+  exports: [DbService],
 })
-export class DbModule { }
+export class DbModule {}
