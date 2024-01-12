@@ -3,11 +3,11 @@
 ```mermaid 
 erDiagram
           USER }|..|{ EVENT : has
-          USER ||--o{ ORDER : places
+          USER ||--o{ SPOT : places
           USER ||--o{ INVOICE : "liable for"
-          EVENT ||--o{ ORDER : receives
-          INVOICE ||--|{ ORDER : covers
-          ORDER ||--|{ ORDER-ITEM : includes
+          EVENT ||--o{ SPOT : receives
+          INVOICE ||--|{ SPOT : covers
+          SPOT ||--|{ SPOT-ITEM : includes
           PRODUCT-CATEGORY ||--|{ PRODUCT : contains
-          PRODUCT ||--o{ ORDER-ITEM : "ordered in"
+          PRODUCT ||--o{ SPOT-ITEM : "ordered in"
 ```

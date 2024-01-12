@@ -17,20 +17,20 @@
     "strictBindCallApply": false,
     "forceConsistentCasingInFileNames": false,
     "noFallthroughCasesInSwitch": false,
-    "paths": {
-      "@sptw/config": [
-        "libs/config/src"
-      ],
-      "@sptw/config/*": [
-        "libs/config/src/*"
-      ],
-      "@sptw/chassis": [
-        "libs/chassis/src"
-      ],
-      "@sptw/chassis/*": [
-        "libs/chassis/src/*"
-      ]
-    }
+    // "paths": {
+      // "@sptw/config": [
+      //   "libs/config/src"
+      // ],
+      // "@sptw/config/*": [
+      //   "libs/config/src/*"
+      // ],
+      // "@sptw/chassis": [
+      //   "libs/chassis/src"
+      // ],
+      // "@sptw/chassis/*": [
+      //   "libs/chassis/src/*"
+      // ]
+    // }
   },
   "ts-node": {
     "swc": true

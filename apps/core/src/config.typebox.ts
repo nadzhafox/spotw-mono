@@ -10,7 +10,7 @@ export const ConfigSchema = Type.Object({
         host: Type.String({ default: '127.0.0.1' })
     }),
     app: Type.Object({
-        port: Type.Number({ default: 3005 }),
+        port: Type.Number({ default: 3000 }),
         host: Type.String({ default: '0.0.0.0' }),
     }),
     redis: Type.Object({
