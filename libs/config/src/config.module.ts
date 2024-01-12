@@ -1,27 +1,25 @@
-import { DynamicModule, Global, Module } from '@nestjs/common';
+import { DynamicModule, Module } from '@nestjs/common';
 import { ConfigService } from './config.service';
-import {
-  createRedisConnectionProvider,
-  IRedisConnectConfig,
-} from './redis-connection.provider';
+import { VALIDATION_SCHEMA } from './consts';
+import { configInitProvider } from './config-init.provider';
 
-interface IConfigInputParams {
-  // todo validationSchema type?
-  validationSchema: any;
-  redisConnectConfig: IRedisConnectConfig;
-}
 
-@Global()
+
+@Module({})
 export class ConfigModule {
-  static register(configParams: IConfigInputParams): DynamicModule {
+  static register({ configSchema }: { configSchema: any }): DynamicModule {
     return {
       module: ConfigModule,
       providers: [
         ConfigService,
-        createRedisConnectionProvider(configParams.redisConnectConfig),
+        {
+          provide: VALIDATION_SCHEMA,
+          useValue: configSchema
+        },
+        configInitProvider
       ],
       exports: [ConfigService],
-      // global: true
+      global: true
     };
   }
 }

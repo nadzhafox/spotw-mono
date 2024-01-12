@@ -2,6 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { CreateEventDto } from './dto/create-event.dto';
 import { UpdateEventDto } from './dto/update-event.dto';
 import { ConfigService } from '@sptw/config';
+import { ConfigSchema } from '../config.typebox';
 
 @Injectable()
 export class EventService {

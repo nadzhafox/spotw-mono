@@ -4,17 +4,13 @@ import { AppService } from './app.service';
 import { EventModule } from './event/event.module';
 import { ConfigModule } from '@sptw/config';
 import { DbModule } from './db/db.module';
+import { ConfigSchema } from './config.typebox';
 
 @Module({
   imports: [
     EventModule,
-    // todo move to chassis lib
     ConfigModule.register({
-      validationSchema: {},
-      redisConnectConfig: {
-        username: process.env.REDIS_CONFIG_USER,
-        password: process.env.REDIS_CONFIG_USER_PASSWORD,
-      },
+      configSchema: ConfigSchema,
     }),
     DbModule,
     // MassiveModule.registerAsync({

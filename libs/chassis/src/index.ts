@@ -1,17 +1,14 @@
 import { NestFactory } from '@nestjs/core';
 import { FastifyAdapter } from '@nestjs/platform-fastify';
-import { AppModule } from './app/app.module';
+// import { ConfigService } from '@sptw/config';
 
 export async function bootstrap(module: any) {
-  // todo add config module
-  // config module read .env
-  // connect to redis and read config by json schema
-
-  console.log(AppModule);
   const app = await NestFactory.create(module, new FastifyAdapter());
-  // const configService = app.get('ConfigServiceToken')
+  // const configService = app.get(ConfigService);
+  // const { port, host } = configService.get<{ app: { port: number, host: string } }>('app');
+  const { port, host } = { port: 3000, host: "0.0.0.0" };
 
-  console.log(`Starting app ${process.env.HOST}:${process.env.PORT}`);
+  console.log({ port, host })
 
-  await app.listen(process.env.PORT, process.env.HOST);
+  await app.listen(port, host);
 }

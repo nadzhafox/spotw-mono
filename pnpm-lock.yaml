@@ -95,6 +95,9 @@ importers:
       '@nestjs/platform-express':
         specifier: ^10.0.0
         version: 10.3.0(@nestjs/common@10.3.0)(@nestjs/core@10.3.0)
+      '@sinclair/typebox':
+        specifier: ^0.32.5
+        version: 0.32.5
       '@sptw/chassis':
         specifier: workspace:^
         version: link:../../libs/chassis
@@ -136,18 +139,6 @@ importers:
         specifier: ^7.8.1
         version: 7.8.1
 
-  libs/app-chassis:
-    dependencies:
-      '@nestjs/common':
-        specifier: ^10.0.0
-        version: 10.3.0(reflect-metadata@0.1.14)(rxjs@7.8.1)
-      '@nestjs/core':
-        specifier: ^10.0.0
-        version: 10.3.0(@nestjs/common@10.3.0)(@nestjs/platform-express@10.3.0)(reflect-metadata@0.1.14)(rxjs@7.8.1)
-      '@nestjs/platform-fastify':
-        specifier: ^10.3.0
-        version: 10.3.0(@nestjs/common@10.3.0)(@nestjs/core@10.3.0)
-
   libs/chassis:
     dependencies:
       '@nestjs/common':
@@ -159,12 +150,9 @@ importers:
       '@nestjs/platform-fastify':
         specifier: ^10.3.0
         version: 10.3.0(@nestjs/common@10.3.0)(@nestjs/core@10.3.0)
-
-  libs/common-tools:
-    dependencies:
-      '@nestjs/common':
-        specifier: ^10.0.0
-        version: 10.3.0(reflect-metadata@0.1.14)(rxjs@7.8.1)
+      '@sptw/config':
+        specifier: workspace:^
+        version: link:../config
 
   libs/config:
     dependencies:
@@ -174,9 +162,16 @@ importers:
       '@sinclair/typebox':
         specifier: ^0.32.5
         version: 0.32.5
+      lodash:
+        specifier: ^4.17.21
+        version: 4.17.21
       redis:
         specifier: ^4.6.12
         version: 4.6.12
+    devDependencies:
+      '@types/lodash':
+        specifier: ^4.14.202
+        version: 4.14.202
 
 packages:
 
@@ -1625,6 +1620,10 @@ packages:
     resolution: {integrity: sha512-BQ5aZNSCpj7D6K2ksrRCTmKRLEpnPvWDiLPfoGyhZ++8YtiK9d/3DBKPJgry359X/P1PfruyYwvnvwFjuEiEIg==}
     dependencies:
       '@types/node': 20.10.6
+    dev: true
+
+  /@types/lodash@4.14.202:
+    resolution: {integrity: sha512-OvlIYQK9tNneDlS0VN54LLd5uiPCBOp7gS5Z0f1mjoJYBrtStzgmJBxONW3U6OZqdtNzZPmn9BS/7WI7BFFcFQ==}
     dev: true
 
   /@types/methods@1.1.4:
@@ -4516,7 +4515,6 @@ packages:
 
   /lodash@4.17.21:
     resolution: {integrity: sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==}
-    dev: true
 
   /log-symbols@4.1.0:
     resolution: {integrity: sha512-8XPvpAA8uyhfteu8pIvQxpJZ7SYYdpUivZpGy6sFsBuKRY/7rQGavedeB8aK+Zkyq6upMFVL/9AW6vOYzfRyLg==}
