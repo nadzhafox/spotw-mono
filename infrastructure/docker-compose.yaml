@@ -26,6 +26,16 @@ services:
       - REDIS_DATABASES=16
     command:
       redis-server /usr/local/etc/redis/redis.conf
+
+  keycloak:
+    image: quay.io/keycloak/keycloak
+    ports:
+      - 8080:8080
+    environment:
+      - KEYCLOAK_ADMIN=spotw-admin
+      - KEYCLOAK_ADMIN_PASSWORD=spotw-password
+    command:
+      start-dev
       
       
 # todo elk stack https://github.com/docker/awesome-compose/blob/master/elasticsearch-logstash-kibana/README.md

@@ -4,9 +4,9 @@
 
 ### Roles
 
+- GlobalAdmin - user who has global right on platform
 - SpotOwner - users who have a spot
 - Renter - user who had rented spot from 
-- GlobalAdmin - user who has global right on platform
 - Member - user who 
 
 
@@ -47,3 +47,6 @@ no identity
 - тегов (тип события?)
 - заявку на участие
 - расписания
+
+
+
